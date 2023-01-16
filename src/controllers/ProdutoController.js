@@ -1,4 +1,7 @@
 const ProdutoModel = require("@model/Produto.js");
+const mailer = require("@mailer");
+
+const Mailer = new mailer();
 
 const Produto = new ProdutoModel();
 
@@ -13,8 +16,13 @@ class ProdutoController {
 		res.send(produto);
 	}
 	async criar(req, res) {
-		const produto = await Produto.create(req.body);
-		res.send(produto);
+		try{
+			const produto = await Produto.create(req.body);
+			await Mailer.sendEmail(`novo produto: ${produto.name} cadastrado`);
+			res.send(produto);
+		}catch(err){
+			console.error('deu ruim man', err);
+		}
 	}
 	async editar(req, res){
 		const {id} = req.params;

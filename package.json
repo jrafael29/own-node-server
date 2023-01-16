@@ -14,6 +14,7 @@
     "body-parser": "^1.20.1",
     "express": "^4.18.2",
     "module-alias": "^2.2.2",
+    "nodemailer": "^6.9.0",
     "nodemon": "^2.0.20",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
@@ -24,6 +25,7 @@
     "@routes": "src/routes/routes.js",
     "@controllers": "src/controllers/",
     "@database": "src/database/database.js",
-    "@model": "src/model/"
+    "@model": "src/model/",
+    "@mailer": "src/mailer/mailer.js"
   }
 }

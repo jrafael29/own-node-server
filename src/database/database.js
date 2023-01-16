@@ -1,6 +1,6 @@
 const { Sequelize } = require("sequelize");
 
-const drive = new Sequelize("own", "postgres", "root", {
+const drive = new Sequelize("own", "postgres", "92406695", {
 	host: "localhost",
     port: 5433,
 	dialect: "postgres",
